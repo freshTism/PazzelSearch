@@ -4,6 +4,7 @@ public class Problem {
 
     private int[] state;
     private int[] initialState;
+    public final int STEP_COST = 1;
 
     public Problem(int[] initialState) {
         this.initialState = initialState;
