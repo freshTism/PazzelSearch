@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="44024c3f-ceb3-42fd-b96a-9508a7ba0ed5" name="Default" comment="">
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/Utility.java" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/src/problem/Node.java" afterPath="$PROJECT_DIR$/src/problem/Node.java" />
       <change beforePath="$PROJECT_DIR$/src/problem/Problem.java" afterPath="$PROJECT_DIR$/src/problem/Problem.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -29,17 +29,24 @@
       <file leaf-file-name="Problem.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/problem/Problem.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="138">
-              <caret line="6" column="10" lean-forward="false" selection-start-line="6" selection-start-column="10" selection-end-line="6" selection-end-column="10" />
-              <folding>
-                <element signature="e#175#176#0" expanded="true" />
-                <element signature="e#223#224#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="529">
+              <caret line="23" column="0" lean-forward="false" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
+              <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Node.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Utility.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/Utility.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="529">
+              <caret line="23" column="0" lean-forward="false" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Node.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/problem/Node.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="345">
@@ -74,8 +81,9 @@
         <option value="$PROJECT_DIR$/src/main/Problem.java" />
         <option value="$PROJECT_DIR$/src/problem/Action.java" />
         <option value="$PROJECT_DIR$/src/problem/SearchTree.java" />
-        <option value="$PROJECT_DIR$/src/problem/Problem.java" />
         <option value="$PROJECT_DIR$/src/problem/Node.java" />
+        <option value="$PROJECT_DIR$/src/problem/Problem.java" />
+        <option value="$PROJECT_DIR$/src/main/Utility.java" />
       </list>
     </option>
   </component>
@@ -204,12 +212,12 @@
       <option name="presentableId" value="Default" />
       <updated>1575618124913</updated>
       <workItem from="1575618129920" duration="10251000" />
-      <workItem from="1575721622906" duration="200000" />
+      <workItem from="1575721622906" duration="6532000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="10451000" />
+    <option name="totallyTimeSpent" value="16783000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-9" y="-9" width="1938" height="1098" extended-state="6" />
@@ -272,17 +280,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/problem/Problem.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="138">
-          <caret line="6" column="10" lean-forward="false" selection-start-line="6" selection-start-column="10" selection-end-line="6" selection-end-column="10" />
-          <folding>
-            <element signature="e#175#176#0" expanded="true" />
-            <element signature="e#223#224#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/problem/Action.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="46">
@@ -295,6 +292,22 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="345">
           <caret line="15" column="60" lean-forward="false" selection-start-line="15" selection-start-column="60" selection-end-line="15" selection-end-column="60" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/problem/Problem.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="529">
+          <caret line="23" column="0" lean-forward="false" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/Utility.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="529">
+          <caret line="23" column="0" lean-forward="false" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
           <folding />
         </state>
       </provider>
