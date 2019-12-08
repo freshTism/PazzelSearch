@@ -1,13 +1,14 @@
 package problem;
 
+import main.Utility;
+
 import java.util.Arrays;
 
 public class Problem {
 
-    private final int PROBLEM_ISZE = 4;
+    private final int PROBLEM_SIZE = 4;
     public final int STEP_COST = 1;
 
-    private int[][] state = new int[PROBLEM_ISZE][PROBLEM_ISZE];
     private int[][] initialState;
     private int[][] goalState;
 
@@ -17,22 +18,40 @@ public class Problem {
     }
 
     public int[][] result(int[][] state, Action action) {
-        int[][] result = new int[PROBLEM_ISZE][PROBLEM_ISZE];
+        int[][] result;
 
-        switch (action) {
-            case UP:
+        //Finds the empty block
+        int[] zeroIndex = Utility.searchArray(state, 0).clone();
 
-                break;
-            case DOWN:
+        if (zeroIndex == null)
+            result = null;
+        else {
+            result = state.clone();
 
-                break;
-            case LEFT:
+            switch (action) {
+                case UP:
+                    result[zeroIndex[0]][zeroIndex[1]] = result[zeroIndex[0] + 1][zeroIndex[1]];
+                    result[zeroIndex[0] + 1][zeroIndex[1]] = 0;
+                    break;
 
-                break;
-            case RIGHT:
+                case DOWN:
+                    result[zeroIndex[0]][zeroIndex[1]] = result[zeroIndex[0] - 1][zeroIndex[1]];
+                    result[zeroIndex[0] - 1][zeroIndex[1]] = 0;
+                    break;
 
-                break;
+                case LEFT:
+                    result[zeroIndex[0]][zeroIndex[1]] = result[zeroIndex[0]][zeroIndex[1] + 1];
+                    result[zeroIndex[0]][zeroIndex[1] + 1] = 0;
+                    break;
+
+                case RIGHT:
+                    result[zeroIndex[0]][zeroIndex[1]] = result[zeroIndex[0]][zeroIndex[1] - 1];
+                    result[zeroIndex[0]][zeroIndex[1] - 1] = 0;
+                    break;
+            }
         }
+
+        return result;
     }
 
     public boolean goalTest(int[][] state) {
@@ -41,7 +60,4 @@ public class Problem {
         else
             return false;
     }
-
-    public void setState(int[][] state) { this.state = state; }
-    public int[][] getState() {return state;}
 }

@@ -18,9 +18,7 @@ public class Utility {
         }
 
         //Did not find the target :(
-        targetIndex[0] = -1;
-        targetIndex[1] = -1;
-        return targetIndex;
+        return null;
     }
 
 }

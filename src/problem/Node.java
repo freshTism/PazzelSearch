@@ -4,7 +4,7 @@ import problem.Problem;
 
 public class Node {
 
-    private int[] state;
+    private int[][] state;
     private Node parent;
     private int pathCost;
     private Action action;
