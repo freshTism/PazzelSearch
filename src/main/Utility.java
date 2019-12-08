@@ -3,6 +3,7 @@ package main;
 public class Utility {
 
     //Searches in a 2D array for a target int and returns its index
+    //When using this first check if it's null !!!
     public static int[] searchArray(int[][] array, int target) {
 
         int[] targetIndex = new int[2];
