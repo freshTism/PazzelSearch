@@ -33,23 +33,23 @@ public class Problem {
 
             switch (action) {
                 case UP:
-                    result[zeroIndex[0]][zeroIndex[1]] = result[zeroIndex[0] + 1][zeroIndex[1]];
-                    result[zeroIndex[0] + 1][zeroIndex[1]] = 0;
-                    break;
-
-                case DOWN:
                     result[zeroIndex[0]][zeroIndex[1]] = result[zeroIndex[0] - 1][zeroIndex[1]];
                     result[zeroIndex[0] - 1][zeroIndex[1]] = 0;
                     break;
 
+                case DOWN:
+                    result[zeroIndex[0]][zeroIndex[1]] = result[zeroIndex[0] + 1][zeroIndex[1]];
+                    result[zeroIndex[0] + 1][zeroIndex[1]] = 0;
+                    break;
+
                 case LEFT:
-                    result[zeroIndex[0]][zeroIndex[1]] = result[zeroIndex[0]][zeroIndex[1] + 1];
-                    result[zeroIndex[0]][zeroIndex[1] + 1] = 0;
+                    result[zeroIndex[0]][zeroIndex[1]] = result[zeroIndex[0]][zeroIndex[1] - 1];
+                    result[zeroIndex[0]][zeroIndex[1] - 1] = 0;
                     break;
 
                 case RIGHT:
-                    result[zeroIndex[0]][zeroIndex[1]] = result[zeroIndex[0]][zeroIndex[1] - 1];
-                    result[zeroIndex[0]][zeroIndex[1] - 1] = 0;
+                    result[zeroIndex[0]][zeroIndex[1]] = result[zeroIndex[0]][zeroIndex[1] + 1];
+                    result[zeroIndex[0]][zeroIndex[1] + 1] = 0;
                     break;
             }
         }
@@ -107,8 +107,28 @@ public class Problem {
         return solution;
     }
 
+    public String solutionToString(ArrayList<int[][]> solution) {
+        String result = "";
+
+        for (int[][] step: solution) {
+            //All lines of one step except the last line
+            for (int i = 0; i < PROBLEM_SIZE - 1; i++) {
+                for (int j = 0; j < PROBLEM_SIZE; j++) {
+                    result += step[i][j] + ", ";
+                }
+            }
+            //Last line of the step
+            for (int j = 0; j < PROBLEM_SIZE - 1; j++)
+                result += step[PROBLEM_SIZE - 1][j] + ", ";
+
+            result += step[PROBLEM_SIZE - 1][PROBLEM_SIZE - 1] + "\n";
+        }
+
+        return result;
+    }
+
     public boolean goalTest(int[][] state) {
-        if (Arrays.equals(state, goalState))
+        if (Arrays.deepEquals(state, goalState))
             return true;
         else
             return false;
