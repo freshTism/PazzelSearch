@@ -16,4 +16,7 @@ public class Node {
         this.pathCost = parent.pathCost + problem.STEP_COST;
     }
 
+    public int[][] getState() { return this.state; }
+    public Node getParent() { return this.parent; }
+
 }

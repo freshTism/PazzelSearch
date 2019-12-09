@@ -94,6 +94,23 @@ public class Problem {
         return actions;
     }
 
+    public ArrayList<int[][]> solution(Node goalState) {
+        ArrayList<int[][]> solution = new ArrayList<int[][]>();
+
+        Node currentNode = goalState;
+
+        solution.add(goalState.getState());
+
+        while (!Arrays.equals(currentNode.getParent().getState(), this.initialState)) {
+            currentNode = currentNode.getParent();
+            solution.add(currentNode.getState());
+        }
+
+        solution.add(initialState);
+
+        return solution;
+    }
+
     public boolean goalTest(int[][] state) {
         if (Arrays.equals(state, goalState))
             return true;
