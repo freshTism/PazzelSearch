@@ -99,14 +99,10 @@ public class Problem {
 
         Node currentNode = goalState;
 
-        solution.add(goalState.getState());
-
-        while (!Arrays.equals(currentNode.getParent().getState(), this.initialState)) {
-            currentNode = currentNode.getParent();
+        while (currentNode != null) {
             solution.add(currentNode.getState());
+            currentNode = currentNode.getParent();
         }
-
-        solution.add(initialState);
 
         return solution;
     }
@@ -117,4 +113,6 @@ public class Problem {
         else
             return false;
     }
+
+    public int[][] getInitialState() { return this.initialState; }
 }

@@ -16,6 +16,14 @@ public class Node {
         this.pathCost = parent.pathCost + problem.STEP_COST;
     }
 
+    //Root node
+    public Node(Problem problem) {
+        this.state = problem.getInitialState();
+        this.parent = null;
+        this.action = null;
+        this.pathCost = 0;
+    }
+
     public int[][] getState() { return this.state; }
     public Node getParent() { return this.parent; }
 
