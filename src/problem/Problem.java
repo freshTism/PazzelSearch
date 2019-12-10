@@ -21,7 +21,7 @@ public class Problem {
 
     //When using this first check if it's null !!!
     public int[][] result(int[][] state, Action action) {
-        int[][] result;
+        int[][] result = new int[state.length][];
 
         //Finds the empty block
         int[] zeroIndex = Utility.searchArray(state, 0).clone();
@@ -29,8 +29,11 @@ public class Problem {
         if (zeroIndex == null)      //Something went wrong
             result = null;
         else {
-            result = state.clone();
+            //Copy state array to result
+            for (int i = 0; i < state.length; i++)
+                result[i] = state[i].clone();
 
+            //Actions based on zero
             switch (action) {
                 case UP:
                     result[zeroIndex[0]][zeroIndex[1]] = result[zeroIndex[0] - 1][zeroIndex[1]];
@@ -58,6 +61,7 @@ public class Problem {
     }
 
     //When using this first check if it's null !!!
+    //Actions based on zero
     public Action[] actions(int[][] state) {
         Action[] actions;
 
