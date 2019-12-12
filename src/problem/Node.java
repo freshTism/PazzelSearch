@@ -26,5 +26,6 @@ public class Node {
 
     public int[][] getState() { return this.state; }
     public Node getParent() { return this.parent; }
+    public int getPathCost() { return this.pathCost; }
 
 }
