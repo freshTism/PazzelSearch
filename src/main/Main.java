@@ -2,6 +2,7 @@ package main;
 
 import problem.Problem;
 import searchStrategies.uninformedSearch.BFS;
+import searchStrategies.uninformedSearch.DFS;
 import searchStrategies.uninformedSearch.UCS;
 
 import java.util.ArrayList;
@@ -13,9 +14,9 @@ public class Main {
 
         int[][] initialState = {
                 {1, 2, 3, 4},
-                {12, 13, 0, 5},
-                {11, 9, 14, 6},
-                {10, 8, 15, 7}
+                {12, 13, 14, 5},
+                {11, 9, 15, 6},
+                {10, 8, 0, 7}
                                 };
 
         int[][] goalState = {
@@ -30,7 +31,8 @@ public class Main {
         Problem problem = new Problem(initialState, goalState);
 
 //        solution = BFS.bfs(problem);
-        solution = UCS.ucs(problem);
+//        solution = UCS.ucs(problem);
+        solution = DFS.dfs(problem);
 
         if (solution == null)
             System.out.println("Failed to solve!");
