@@ -7,7 +7,6 @@ import problem.Problem;
 import java.util.*;
 
 public class DFS {
-
     public static ArrayList<int[][]> dfs(Problem problem) {
         Node node = new Node(problem);
 

@@ -5,10 +5,11 @@ import main.Utility;
 import java.awt.*;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
 
 public class Problem {
 
-    private final int PROBLEM_SIZE = 4;
+    public final int PROBLEM_SIZE = 4;
     public final int STEP_COST = 1;
 
     private int[][] initialState;
@@ -108,6 +109,8 @@ public class Problem {
             currentNode = currentNode.getParent();
         }
 
+        Collections.reverse(solution);
+
         return solution;
     }
 
@@ -136,6 +139,32 @@ public class Problem {
             return true;
         else
             return false;
+    }
+
+
+    public int manhattanDistance(Node node) {
+        int manhattanDistance = 0;
+
+        int[] targetIndex;
+        int[][] nodeState = new int[PROBLEM_SIZE][];
+
+        for (int i = 0; i < PROBLEM_SIZE; i++)
+            nodeState[i] = node.getState()[i].clone();
+
+        for (int i = 0; i < PROBLEM_SIZE; i++) {
+            for (int j = 0; j < PROBLEM_SIZE; j++) {
+                if (nodeState[i][j] != 0 && nodeState[i][j] != goalState[i][j]) {
+                    targetIndex = Utility.searchArray(goalState, nodeState[i][j]).clone();
+                    manhattanDistance += (Math.abs(i - targetIndex[0]) + Math.abs(j - targetIndex[1]));
+                }
+            }
+        }
+
+        return manhattanDistance;
+    }
+
+    public int heuristic(Node node) {
+        return manhattanDistance(node) + node.getPathCost();
     }
 
     public int[][] getInitialState() { return this.initialState; }

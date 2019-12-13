@@ -1,4 +1,4 @@
-package searchStrategies.uninformedSearch;
+package searchStrategies.informedSearch;
 
 import problem.Action;
 import problem.Node;
@@ -6,17 +6,19 @@ import problem.Problem;
 
 import java.util.*;
 
-public class UCS {
-    public static ArrayList<int[][]> ucs(Problem problem) {
+public class AStar {
+
+
+    public static ArrayList<int[][]> aStar(final Problem problem) {
         Node node = new Node(problem);
 
-        Comparator<Node> nodePathCostComparator = new Comparator<Node>() {
+        Comparator<Node> nodeHeuristicComparator = new Comparator<Node>() {
             @Override
             public int compare(Node o1, Node o2) {
-                return o1.getPathCost() - o2.getPathCost();
+                return problem.heuristic(o1) - problem.heuristic(o2);
             }
         };
-        PriorityQueue<Node> frontier = new PriorityQueue<Node>(nodePathCostComparator);
+        PriorityQueue<Node> frontier = new PriorityQueue<Node>(nodeHeuristicComparator);
         frontier.add(node);
 
         Set<int[][]> explored = new HashSet<int[][]>();
